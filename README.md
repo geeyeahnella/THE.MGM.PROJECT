@@ -1,5 +1,7 @@
 # THE MGM PROJECT
 
+LBYEC72 EB1
+
 MEMBERS:
 
 Gia Supetran 
@@ -8,8 +10,6 @@ May Sybal
 
 Michael Santos 
 
-In Partial Fulfillment of 
-the requirement in 
-LBYEC72
+
 
 # Brief Description
