@@ -13,5 +13,4 @@ Michael Santos
 
 
 # Brief Description
-HELLO HELLO HELLO
-hoy
+The MGM Project is designed to cater the industry's need for digital system. The team is 
