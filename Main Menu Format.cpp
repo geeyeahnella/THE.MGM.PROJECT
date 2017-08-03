@@ -27,14 +27,19 @@ int main(void)
 		{				
 			case 1:
 				system ("pause");
+				system ("cls");
 				break;
 			case 2:
-				
+				system ("pause");
+				system ("cls");
 				break;
 			case 3:
-				
+				system ("pause");
+				system ("cls");
 				break;
 			case 4:
+				system ("pause");
+				system ("cls");
 				break;
 			default:	
 				cout<<"Invalid input!\n\n";
