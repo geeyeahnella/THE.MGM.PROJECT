@@ -1,3 +1,9 @@
+/*
+Author: Santos, Supetran, Sybal
+Subject: LBYEC72 - EB2
+Date: August 9, 2017
+*/
+
 #include <stdlib.h>
 #include <math.h>
 #include <iostream>
@@ -11,46 +17,52 @@ int main(void)
 	do
 	{
         system("cls");
-        cout << "==============================="   <<'\n';
-        cout << "            Main Menu          "   <<'\n';
-        cout << "==============================="   <<'\n' <<'\n';
-        cout << "1. Sub Menu 1"   <<'\n';
-        cout << "2. Sub Menu 2"   <<'\n';
-        cout << "3. Sub Menu 3"        <<'\n' <<'\n';
-        cout << "4. Exit"                     <<'\n' <<'\n';
-        cout << "-------------------------------"    <<'\n';
-        cout << ">> ";
-		cin>>opt;
-		system("cls");
+        system("COLOR 8E"); 
+		int choice, ch;  
+	 	complex a,b,c;
+		while(choice !=7){
+		cout << "/============================================/\n";
+		cout << "         COMPLEX MATHEMATICAL OPERATIONS      \n";
+		cout << "/============================================/\n";
+		cout << "1. Customer\n";
+		cout << "2. Administrator\n";
+		cout << "3. Exit\n"; // Otherwise, print "INVALID"
+		cout << ">> ";
+		cin >> choice;
 		
-		switch(opt)
-		{				
-			case 1:
-				system ("pause");
-				system ("cls");
-				break;
+		switch(choice){
+			case 1: 
+				system("cls");
+				cout<<"\nEnter The First Complex Number: ";  
+	       		a.read();  
+	       		a.display();  
+	       		cout<<"\nEnter The Second Complex Number: \n";  
+	       		b.read();  
+	       		b.display();  
+	      		c=a+b;  
+	      		c.display(); 
+				system("PAUSE"); 
+				system("cls");
+	       		break;  
 			case 2:
-				system ("pause");
-				system ("cls");
-				break;
-			case 3:
-				system ("pause");
-				system ("cls");
-				break;
-			case 4:
-				system ("pause");
-				system ("cls");
-				break;
-			default:	
-				cout<<"Invalid input!\n\n";
-				opt = 1;
-				break;
-		}
-	} while(opt >= 1 && opt <= 3);
-
-
-	cout<<"\nThank you for using this program!\n\n";
-	system("pause");
-	return 0;	
-	
+				system("cls");
+				cout<<"\nEnter The First Complex Number: ";  
+		        a.read();  
+		        a.display();  
+		        cout<<"\nEnter The Second Complex Number: ";  
+		        b.read();  
+		        b.display();  
+		        c=b-a;  
+		        c.display(); 
+				system("PAUSE");
+				system("cls"); 
+		        break;   
+		    case 3:
+		 		 cout <<"Exit was chosen!\n";
+		 		 break;
+		 	default:
+		 		cout <<"\nINVALID INPUT!\n";
+	}}
+	system("PAUSE");
+	return 0;
 }
