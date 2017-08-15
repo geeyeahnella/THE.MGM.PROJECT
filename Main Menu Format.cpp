@@ -60,7 +60,6 @@ int main()
    case '3':
          insert();
          break;
-
    case '4':
          deletes();
          break;
@@ -154,7 +153,7 @@ void build()
 		
 		cout <<"Code: ";
 		cin >> emp[i].code;
-		
+
 		cout << "Position: ";
 		cin >> emp[i].designation;
 
@@ -333,31 +332,21 @@ void edit()
 			{
       			switch(option)
       			{
-				  	case '1':
-
-            			editname(i);
-            			break;
-
+				case '1':
+            				editname(i);
+            				break;
        				case '2':
-
-            			editcode(i);
-            			break;
-
+            				editcode(i);
+            				break;
        				case '3':
-
-            			editdes(i);
-            			break;
-
+            				editdes(i);
+            				break;
        				case '4':
-
-						editexp(i);
-            			break;
-            			
-					case '5':
-						
-						editage(i);
+					editexp(i);
+            				break;
+				case '5':	
+					editage(i);
            				break;
-
      			}			
 				 
 			editmenu();
@@ -375,69 +364,57 @@ void editmenu()
 
 	system("cls");
 
-    cout << "========================================" <<'\n';
+   	cout << "========================================" <<'\n';
 	cout << "               Editing Menu             " <<'\n';
 	cout << "========================================" <<'\n';
 		
 	cout << "\n\t\t1. Name";
-    cout << "\n\t\t2. Code";
-    cout << "\n\t\t3. Position";
-    cout << "\n\t\t4. Experience";
-    cout << "\n\t\t5. Age";
-    cout << "\n\t\t6. Main Menu";     
+    	cout << "\n\t\t2. Code";
+    	cout << "\n\t\t3. Position";
+    	cout << "\n\t\t4. Experience";
+    	cout << "\n\t\t5. Age";
+    	cout << "\n\t\t6. Main Menu";     
         
 	cout << "\n========================================" <<'\n';
-    cout << "\n";
-    cout << "\t\t >> ";
-
+   	cout << "\n";
+    	cout << "\t\t >> ";
   }
 
 void editname(int i)
 {
-
 	cout<<"Enter New Name: ";
 	cin>>emp[i].name;
-
 }
 
 void editcode(int i)
 {
-
 	cout<<"Enter New Code: ";
 	cin>>emp[i].code;
-
 }
   
 void editdes(int i)
 {
-
 	cout<<"Enter New Position: ";
 	cin>>emp[i].designation;
-
 }
 
 void editexp(int i)
 {
-
 	cout<<"Enter New Years of Experience";
 	cin>>emp[i].exp;
-
 }
 
 void editage(int i)
 {
-
 	cout<<"Enter New Age ";
 	cin>>emp[i].age;
-
 }
 
 void search()
 {
-
 	system("cls");
 
-    cout << "========================================" <<'\n';
+    	cout << "========================================" <<'\n';
 	cout << "        Search Employee Record          " <<'\n';
 	cout << "========================================" <<'\n';
 	cout << endl;
@@ -478,7 +455,7 @@ void sort()
 	
 	system("cls");
 
-    cout << "========================================" <<'\n';
+    	cout << "========================================" <<'\n';
 	cout << "             Sort Table by              " <<'\n';
 	cout << "========================================" <<'\n';
 	
@@ -500,27 +477,18 @@ void sort()
 		switch(option)
 		{
 			case '1':
-
-        		sortname();
-        		break;
-
+        			sortname();
+        			break;
    			case '2':
-
-        		sortcode();
+        			sortcode();
 				break;
-
    			case '3':
-
-        		sortdes();
+        			sortdes();
 				break;
-
    			case '4':
-
-        		sortexp();
-        		break;
-
+        			sortexp();
+        			break;
    			case '5':
-
 				sortage();
 				break;
 
@@ -534,22 +502,22 @@ void sort()
 void sortmenu()
 {
 
-    system("cls");
+    	system("cls");
 
-    cout << "========================================" <<'\n';
+    	cout << "========================================" <<'\n';
 	cout << "             Sort Table by              " <<'\n';
 	cout << "========================================" <<'\n';
 		
 	cout << "\n\t1. Name";
-    cout << "\n\t2. Code";
-    cout << "\n\t3. Position";
-    cout << "\n\t4. Experience";
-    cout << "\n\t5. Age";
-    cout << "\n\t6. Main Menu";     
+    	cout << "\n\t2. Code";
+   	cout << "\n\t3. Position";
+   	cout << "\n\t4. Experience";
+    	cout << "\n\t5. Age";
+   	cout << "\n\t6. Main Menu";     
    
-    cout << "\n========================================" <<'\n';
-    cout << "\n";
-    cout << "\t>> ";
+    	cout << "\n========================================" <<'\n';
+    	cout << "\n";
+    	cout << "\t>> ";
    
 }
 
