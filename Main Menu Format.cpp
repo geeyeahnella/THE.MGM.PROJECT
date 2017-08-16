@@ -46,48 +46,43 @@ int main()
  void exp();
 
  	pass();
+	
+do{
  
 	load();
 
 	menu();
-
- while((option=cin.get())!='9'){
-
-	switch(option)
-
- 	{
-
+	
+	cin >> option;
+	
+	switch(option){
 		case '1':
-	         build();
-	         break;
+			build();
+			break;
 		case '2':
-	         list();
-	         break;
+			list();
+			break;
 		case '3':
-	         insert();
-	         break;
+			insert();
+			break;
 		case '4':
-	         deletes();
-	         break;
+			deletes();
+			break;
 		case '5':
-	        edit();
-	        break;
+			edit();
+			break;
 		case '6':
-	        search();
-	        break;
+			search();
+			break;
 		case '7':
-	        sort();
-	        break;
+		    sort();
+		    break;
 		case '8':
-	        exp();
-	        break;
-	}
+			exp();
+			break;
+		}
 	
-	load();
-	
-	menu();
-	
- }
+} while(option!='9');
 
 return 0;
 
