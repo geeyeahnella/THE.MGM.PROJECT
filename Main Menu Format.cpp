@@ -6,6 +6,7 @@
 #include<dos.h>
 #include<conio.h>
 #include<cstdio>
+#include <fstream>
 #define max 20
 
 using namespace std;
@@ -40,70 +41,102 @@ int main()
  void sort();
  char option;
  void menu();
+ void load();
+ void pass();
+ void exp();
 
- menu();
+ pass();
 
- while((option=cin.get())!='8')
+ while((option=cin.get())!='9'){
+ 	
+	load();
 
- {
+	menu();
 
-  switch(option)
+	switch(option)
 
-  {
+ 	{
 
-   case '1':
-         build();
-         break;
-   case '2':
-         list();
-         break;
-   case '3':
-         insert();
-         break;
-   case '4':
-         deletes();
-         break;
-   case '5':
-        edit();
-        break;
-   case '6':
-        search();
-        break;
-   case '7':
-         sort();
-         break;
-  }
-
-menu();
-
-  }
-
-  return 0;
-
+		case '1':
+	         build();
+	         break;
+		case '2':
+	         list();
+	         break;
+		case '3':
+	         insert();
+	         break;
+		case '4':
+	         deletes();
+	         break;
+		case '5':
+	        edit();
+	        break;
+		case '6':
+	        search();
+	        break;
+		case '7':
+	        sort();
+	        break;
+		case '8':
+	        exp();
+	        break;
+	}
  }
+
+return 0;
+
+}
+ 
+void pass(){
+	string username;
+	string password;
+	do {
+	system("cls");
+	cout << "\t\t========================================" <<'\n';
+	cout << "\t\t        MGM Grand Employee System       " <<'\n';
+	cout << "\t\t========================================" <<'\n';
+
+
+
+   	cout << "\n \t\t    Username: ";
+	  getline(cin, username);
+	  if (username == "Admin") {
+	    cout << "\n \t\t    Password: ";
+	    getline(cin, password);
+	    if (password != "1234") {
+	      cout << "\n \t\t    Invalid password. Try again." << endl;
+	      cout << "\n\n";
+	      system("pause");
+	    }
+	  } else {
+	    cout << "\n \t\t    Invalid username. Try again." << endl;
+	    cout << "\n\n";
+	    system("pause");
+	  }
+	} while (password != "1234");
+}
+
+void load(){
+	system("cls");
+	cout << "\n\n\n\t\t\t\tLoading...\n\n";
+	char a=177, b=219;
+	cout << "\t\t\t\t";
+	for (int i=0;i<=15;i++)
+	cout << a;
+	cout << "\r";
+	cout << "\t\t\t\t";
+	for (int i=0;i<=15;i++)
+		{
+		cout<<b;
+		Sleep(80); 
+		}
+}
 
  void menu()
  {
-
-
+ 	
 	system("cls");
-	printf("\n\n\n\t\t\t\tLoading...\n\n");
-	char a=177, b=219;
-	printf("\t\t\t\t");
-	for (int i=0;i<=15;i++)
-	std::cout<<a;
-	printf("\r");
-	printf("\t\t\t\t");
-	for (int i=0;i<=15;i++)
-		{
-		std::cout<<b;
-		Sleep(80); 
-		}
-
-
-	system("cls");
-
-
 
 	cout << "\t\t========================================" <<'\n';
 	cout << "\t\t        MGM Grand Employee System       " <<'\n';
@@ -115,14 +148,15 @@ menu();
    	cout << "\n \t\t    2. List of Employees";
    	cout << "\n \t\t    3. Add New Employee ";
    	cout << "\n \t\t    4. Remove Employee Record";
-    	cout << "\n \t\t    5. Edit Employee Record";
-    	cout << "\n \t\t    6. Search Employee Record";
-    	cout << "\n \t\t    7. Sort List by";
-    	cout << "\n \t\t    8. Exit Program";     
+    cout << "\n \t\t    5. Edit Employee Record";
+    cout << "\n \t\t    6. Search Employee Record";
+    cout << "\n \t\t    7. Sort List by";
+    cout << "\n \t\t    8. Export List";
+    cout << "\n \t\t    9. Exit Program";     
         
 	cout << "\n \t\t========================================" <<'\n';
-    	cout << "\n";
-    	cout << "\t\t    >> ";
+   	cout << "\n";
+    cout << "\t\t    >> ";
 
 }
 
@@ -147,7 +181,8 @@ void build()
 	for(int i=0;i<=num-1;i++)
 	
 	{
-
+		cout << "\n";
+		
 		cout << "Name: ";
 		cin >> emp[i].name;
 		
@@ -178,15 +213,15 @@ void  list()
 
  system("cls");
 
-	cout << "========================================================" <<'\n';
-	cout << "                     List of Employees                  " <<'\n';
-	cout << "========================================================" <<'\n';
+	cout << "=============================================================" <<'\n';
+	cout << "                      List of Employees                      " <<'\n';
+	cout << "=============================================================" <<'\n';
 
 
 
-	cout << "========================================================" << '\n';
+	cout << "=============================================================" << '\n';
 	cout << "\tName\tCode\t Position\t Years(EXP)\t Age " << '\n';
-	cout << "========================================================" << '\n';
+	cout << "=============================================================" << '\n';
 
 	for(int i=0;i<=num-1;i++)
  	{
@@ -770,21 +805,43 @@ void sortexp()
 	}
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+void exp(){
+	system("cls");
+	string exportFileName;
+	ofstream exportFile;
+	
+	cout<<"Enter the file name: ";
+	cin>>exportFileName;
+		
+	exportFile.open(string(exportFileName+".txt").c_str());
+						
+	if(exportFile.is_open()){
+	//file opened successfully so we are here
+		cout << "\nFile opened successfully! Writing data from database to file...";
+					
+		for(int i=0;i<=num-1;i++){
+			exportFile<<"Name: ";
+			exportFile<<emp[i].name;
+			exportFile<<"\nCode: ";
+			exportFile<<emp[i].code;
+			exportFile<<"\nPosition: ";
+			exportFile<<emp[i].designation;
+			exportFile<<"\nYears of Experience: ";
+			exportFile<<emp[i].exp;
+			exportFile<<"\nAge: ";
+			exportFile<<emp[i].age;
+			exportFile<<"\n\n";
+		}
+		
+		cout << "\n\nEmployee List successfully saved into the file "<< exportFileName << ".txt !";
+		}
+					
+	else{ //file could not be opened
+	cout<<"\nFile could not be opened.";
+	}
+					
+	exportFile.close();
+					
+	cout<<"\n\nPress any key to go back... ";
+	getch();
+}
