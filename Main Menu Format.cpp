@@ -7,6 +7,7 @@
 #include<conio.h>
 #include<cstdio>
 #include <fstream>
+#include <cctype>
 #define max 20
 
 using namespace std;
@@ -89,32 +90,56 @@ return 0;
 }
  
 void pass(){
-	string username;
-	string password;
-	do {
-	system("cls");
-	cout << "\t\t========================================" <<'\n';
-	cout << "\t\t        MGM Grand Employee System       " <<'\n';
-	cout << "\t\t========================================" <<'\n';
-
-
-
-   	cout << "\n \t\t    Username: ";
-	  getline(cin, username);
-	  if (username == "Admin") {
-	    cout << "\n \t\t    Password: ";
-	    getline(cin, password);
-	    if (password != "1234") {
-	      cout << "\n \t\t    Invalid password. Try again." << endl;
-	      cout << "\n\n";
-	      system("pause");
-	    }
-	  } else {
-	    cout << "\n \t\t    Invalid username. Try again." << endl;
-	    cout << "\n\n";
-	    system("pause");
-	  }
-	} while (password != "1234");
+    char userChar[100], choice='Y', input, passChar[100];
+	    
+	for (int i=0; i<100; userChar[i++]=0);
+	    
+	do{
+			system("cls");
+			cout << "\t\t========================================" <<'\n';
+			cout << "\t\t        MGM Grand Employee System       " <<'\n';
+			cout << "\t\t========================================" <<'\n';
+			cout<<"\n \t\t    USERNAME: ";
+			cin.getline(userChar,100);
+			cout<<"\n \t\t    PASSWORD: ";
+	
+			for (int i=0;;i++)
+			{
+				input=getch();
+				if ((input!=8)&&(input!=13))
+				{	
+				passChar[i]=input;
+				}
+				
+				else if (input==8)
+				i-=2;
+				else if (input==13)
+					break;
+					cout<<"*";	
+			}
+			
+		    if ((!strcmp(userChar,"Admin"))&&(!strcmp(passChar, "lbyec72")))
+		    {
+				cout << "\n\n\t\t========================================\n";
+		        cout<<"\n \t\t    Access Granted!";
+		        system("pause>0");
+				break;                                               
+		                                                       }                      
+		    else 
+		    cout << "\n\n\t\t========================================\n";
+			cout<<"\n \t\t    Acess denied!\n";
+		    cout<<"\n \t\t    Do you want to try again? Y/N : ";
+		    cin>>choice;
+		    choice=toupper(choice);
+		    cin.ignore(100,'\n');
+		    for (int i=0; i<100; userChar[i++]=0);
+		    for (int i=0; i<100; passChar[i++]=0);
+	    
+	}while(choice == 'Y');
+	
+	if (choice == 'N'){
+		exit (1);
+	}
 }
 
 void load(){
@@ -148,15 +173,15 @@ void load(){
    	cout << "\n \t\t    2. List of Employees";
    	cout << "\n \t\t    3. Add New Employee ";
    	cout << "\n \t\t    4. Remove Employee Record";
-    	cout << "\n \t\t    5. Edit Employee Record";
-   	cout << "\n \t\t    6. Search Employee Record";
-    	cout << "\n \t\t    7. Sort List by";
-    	cout << "\n \t\t    8. Export List";
-    	cout << "\n \t\t    9. Exit Program";     
+    cout << "\n \t\t    5. Edit Employee Record";
+    cout << "\n \t\t    6. Search Employee Record";
+    cout << "\n \t\t    7. Sort List by";
+    cout << "\n \t\t    8. Export List";
+    cout << "\n \t\t    9. Exit Program";     
         
 	cout << "\n \t\t========================================" <<'\n';
    	cout << "\n";
-    	cout << "\t\t    >> ";
+    cout << "\t\t    >> ";
 
 }
 
