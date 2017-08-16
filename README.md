@@ -15,7 +15,7 @@ Michael Santos
 # Brief Description
 
 =======
-The MGM Project is designed to cater the industry's need for digital system. The team aims to create a system that would make it easier to track the employees of a certain company.
+The MGM Project is designed to cater the industry's need for digital system, specifically the administration sector of a given company. With this program, the admin would be able to work in a more efficient and organized pace in regards to storing the data of their employees and it also features an export system within the program. The team aims to able to make this program beneficial to .
 
 # Specifications
 =======
