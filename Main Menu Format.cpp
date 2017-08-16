@@ -148,15 +148,15 @@ void load(){
    	cout << "\n \t\t    2. List of Employees";
    	cout << "\n \t\t    3. Add New Employee ";
    	cout << "\n \t\t    4. Remove Employee Record";
-    cout << "\n \t\t    5. Edit Employee Record";
-    cout << "\n \t\t    6. Search Employee Record";
-    cout << "\n \t\t    7. Sort List by";
-    cout << "\n \t\t    8. Export List";
-    cout << "\n \t\t    9. Exit Program";     
+    	cout << "\n \t\t    5. Edit Employee Record";
+   	cout << "\n \t\t    6. Search Employee Record";
+    	cout << "\n \t\t    7. Sort List by";
+    	cout << "\n \t\t    8. Export List";
+    	cout << "\n \t\t    9. Exit Program";     
         
 	cout << "\n \t\t========================================" <<'\n';
    	cout << "\n";
-    cout << "\t\t    >> ";
+    	cout << "\t\t    >> ";
 
 }
 
