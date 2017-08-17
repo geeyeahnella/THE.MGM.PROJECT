@@ -19,3 +19,4 @@ The MGM Project is designed to cater the industry's need for digital system, spe
 
 # Specifications
 =======
+The Designed Program is equipped with the a state-of-the-art Password Protection module which limits the access to the program. This also ensure that only administrators can accesses and view the program. The program also provides an efficient way of producing a document file of the employees with their personal informations. 
