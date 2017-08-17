@@ -54,7 +54,8 @@ void start_item(const unsigned int menu_number) {
 	 	ShellExecute(NULL, "open", "About Us.html", NULL, NULL, SW_SHOWNORMAL);	
         break;
    		 }   
-	case 3:
+	case 3:{
+		break;
 		third_item();
 		puts("Calling third item..."); 
 		ShellExecute(NULL, "open", "FINAL CODE.html",NULL, NULL, SW_SHOWNORMAL);
@@ -89,13 +90,13 @@ int main(int argc, char **argv) {
     // Set-up the text foreground, text, image;
     CImg<unsigned char> fore, text, img;
 
-	fore.assign(back.width(),50,1,1,0).draw_text(20,y0 - 3,"Choose from the following options:",grey,0,1,23);
+	fore.assign(back.width(),50,1,1,0).draw_text(20,y0 - 3,"MGM Grand",grey,0,1,23);
     (fore+=fore.get_dilate(3).dilate(3)).resize(-100,-100,1,3);
 
     text.draw_text(1,1,
-				   "1. Administration\n"
-				   "2. About Us (HTML)\n"
-				   "3. Exit\n",
+				   "\t\t\t\t\tAdministration\n"
+				   "\t\t\t\t   About Us (HTML)\n"
+				   "\t\t\t\t\t\t  Exit\n",
                    white,0,1,TEXT_HEIGHT).resize(-100,-100,1,3);
                    
     fore.resize(back,0).draw_image(20,y0 + 3*TEXT_INCREMENT,text|=text.get_dilate(3)>>4);
